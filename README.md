@@ -65,6 +65,11 @@ local mySlider = Slider(posx, posy, sizex, sizey, min, max)
 local myComboBox = ComboBox(posx, posy, sizex, sizey)
 
 local myCheckBox = CheckBox(posx, posy, sizex, sizey)
+
+local myProgressBar = ProgressBar(posx, posy, sizex, sizey)
+
+local mySpacer = Spacer(posx, posy, sizex, sizey, spacerx, spacery) -- spacerx & spacery are number arguments
+
 ```
 
 Methods
@@ -135,7 +140,18 @@ Widget:RemoveOption(name)
 Widget:SetCheckedState(ischecked)
 
 Widget:GetCheckedState() -- returns a boolean
+```
 
+- Progress Bar
+
+```lua
+Widget:SetProgressBarValue(value)
+
+Widget:GetProgressBarValue()
+
+Widget:SetProgressBarColor(color)
+
+Widget:GetProgressBarColor()
 ```
 Events:
 
