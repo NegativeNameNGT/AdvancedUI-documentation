@@ -96,7 +96,7 @@ function Widget:SetProgressBarColor(Color)
 end
 
 function Widget:SetProgressBarValue(value)
-    bridge:CallBlueprintEvent("SetProgressBarValue", self.id, tonumber(float))
+    bridge:CallBlueprintEvent("SetProgressBarValue", self.id, tostring(value))
 	return self
 end
 

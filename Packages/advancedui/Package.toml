@@ -5,7 +5,7 @@
     # contributors
     author =               "ERO"
     # version
-    version =              "1.0"
+    version =              "1.0.0"
     # image URL
     image =                ""
     # package type: 'script' (normal package), 'game-mode' (unique package - can only load one at a time) or 'loading-screen' (special package loaded in loading screen)
@@ -20,5 +20,5 @@
     ]
     # asset packs requirements
     assets_requirements = [
-        "advancedui",
+        
     ]
