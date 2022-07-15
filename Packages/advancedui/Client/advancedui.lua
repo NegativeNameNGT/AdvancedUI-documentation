@@ -15,31 +15,37 @@ end
 function Widget:AddChild(ins)
     local key = self.id
     bridge:CallBlueprintEvent("AddChild", key, ins.id)
+	return self
 end
 
 
 function Widget:SetPadding(posx, posy)
     local id = self.id
     bridge:CallBlueprintEvent("SetPadding", posx, posy, id)
+	return self
 end
 
 function Widget:SetTranslation(posx, posy)
     local id = self.id
     bridge:CallBlueprintEvent("SetPadding", id, posx, posy)
+	return self
 end
 
 function Widget:SetSize(sizex, sizey)
     local id = self.id
     bridge:CallBlueprintEvent("SetWidgetSize", sizex, sizey, id)
+	return self
 end
 
 
 function Widget:SetIsVisible(visible)
     bridge:CallBlueprintEvent("SetIsVisible", visible, self.id)
+	return self
 end
 
 function Widget:SetSliderValue(value)
     bridge:CallBlueprintEvent("SetSliderValue", self.id, value)
+	return self
 end
 
 
@@ -77,26 +83,32 @@ end
 
 function Widget:SetText(name)
     bridge:CallBlueprintEvent("SetText", self.id, name)
+	return self
 end
 
 function Widget:SetTab(id)
     bridge:CallBlueprintEvent("SetTab", self.id, id)
+	return self
 end
 
 function Widget:SetSelectedOption(name)
     bridge:CallBlueprintEvent("SetSelectedOption", self.id, name)
+	return self
 end
 
 function Widget:ClearOptions()
     bridge:CallBlueprintEvent("ClearOptions", self.id)
+	return self
 end
 
 function Widget:AddOption(name)
     bridge:CallBlueprintEvent("AddOption", self.id, name)
+	return self
 end
 
 function Widget:RemoveOption(name)
     bridge:CallBlueprintEvent("RemoveOption", self.id, name)
+	return self
 end
 
 
