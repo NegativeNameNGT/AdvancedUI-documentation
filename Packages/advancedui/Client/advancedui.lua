@@ -296,7 +296,27 @@ function Widget:GetSliderValue()
 end
 
 function Widget:GetSize()
-    local value = GetValue("GetSliderValue", self.id)
+    local value = GetValue("GetSize", self.id)
+    local splitted = Split(value, "''")
+
+    local x = tonumber(splitted[1])
+    local y = tonumber(splitted[2])
+
+    return x,y
+end
+
+function Widget:GetPadding()
+    local value = GetValue("GetWidgetPadding", self.id)
+    local splitted = Split(value, "''")
+
+    local x = tonumber(splitted[1])
+    local y = tonumber(splitted[2])
+
+    return x,y
+end
+
+function Widget:GetTranslation()
+    local value = GetValue("GetTranslation", self.id)
     local splitted = Split(value, "''")
 
     local x = tonumber(splitted[1])
@@ -312,4 +332,3 @@ end
 function Widget:GetSelectedOption()
     return GetValue("GetSelectedOption", self.id)
 end
-
