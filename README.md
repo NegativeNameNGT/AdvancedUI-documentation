@@ -63,6 +63,8 @@ local myImage = Image(posx, posy, sizex, sizey, text, url) -- only works with ur
 local mySlider = Slider(posx, posy, sizex, sizey, min, max)
 
 local myComboBox = ComboBox(posx, posy, sizex, sizey)
+
+local myCheckBox = CheckBox(posx, posy, sizex, sizey)
 ```
 
 Methods
