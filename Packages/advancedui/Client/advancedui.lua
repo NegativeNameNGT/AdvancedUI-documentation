@@ -235,6 +235,16 @@ function ComboBox(posx, posy, sizex, sizey)
     return ins
 end
 
+function CheckBox(posx, posy, sizex, sizey)
+    local ins = Widget.new()
+
+    local key = #ids+1
+    ids[key] = ins
+    ins.id = key
+
+    bridge:CallBlueprintEvent("CreateCheckbox", posx, posy, sizex, sizey, key)
+    return ins
+end
 
 
 -- Panels constructors
