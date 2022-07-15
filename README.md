@@ -158,7 +158,7 @@ end)
 - Slider
 
 ```lua
-mySlider:Subscribe(Slider_Begin", function()
+mySlider:Subscribe("Slider_Begin", function()
 
 end)
 
