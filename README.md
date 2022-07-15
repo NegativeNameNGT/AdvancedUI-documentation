@@ -130,7 +130,7 @@ Widget:RemoveOption(name)
 ```
 
 - Checkbox
-- 
+
 ```lua
 Widget:SetCheckedState(ischecked)
 
