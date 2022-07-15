@@ -127,6 +127,14 @@ Widget:AddOption(name)
 Widget:RemoveOption(name)
 ```
 
+- Checkbox
+- 
+```lua
+Widget:SetCheckedState(ischecked)
+
+Widget:GetCheckedState() -- returns a boolean
+
+```
 Events:
 
 - Window
@@ -189,6 +197,14 @@ end)
 
 ```lua
 myCombobox:Subscribe("OnSelectionChanged", function(selected)
+
+end)
+```
+
+- Checkbox
+
+```lua
+myCheckbox:Subscribe("StateChanged", function(checked)
 
 end)
 ```
