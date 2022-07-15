@@ -58,7 +58,7 @@ local myText = Text(posx, posy, sizex, sizey, text, fontsize, justify)
 
 local myTextBox = TextBox(posx, posy, sizex, sizey, text, fontsize, hint_text)
 
-local myImage = Image(posx, posy, sizex, sizey, text, url) -- only works with url! example: https://docs.nanos.world/img/nanos-world.png
+local myImage = Image(posx, posy, sizex, sizey, url) -- only works with url! example: https://docs.nanos.world/img/nanos-world.png
 
 local mySlider = Slider(posx, posy, sizex, sizey, min, max)
 
