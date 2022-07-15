@@ -1,0 +1,64 @@
+# asset pack configurations
+[asset_pack]
+    # asset pack name
+    name =              "advancedui"
+    # contributors
+    author =            ""
+    # version
+    version =           "0.0.1"
+    # image URL
+    image =             ""
+
+# unreal engine configurations
+[unreal]
+    # unreal engine folder - the name of the root folder (the one inside UnrealProject/Content/) which the assets will have references to each other
+    unreal_folder =     "advancedui"
+    # unreal engine version - unreal version this asset pack was compiled on
+    unreal_version =    "5.0.3"
+
+# assets files
+[assets]
+    # maps
+    [assets.maps]
+        # MyMap = "MyFolder/MyAwesomeMap"
+        # ...
+
+    # static meshes
+    [assets.static_meshes]
+        # SM_Flower_01 = "MyFolder/SM_Awesome_Flower_01"
+        # ...
+
+    # skeletal meshes
+    [assets.skeletal_meshes]
+        # SK_Better_Man = "Characters/SK_BetterMan_03"
+        # ...
+
+    # sounds
+    [assets.sounds]
+        # A_Awesome_Music = "Sounds/A_Awesome_Music"
+        # ...
+
+    # animations
+    [assets.animations]
+        # A_Character_Jump = "Animations/A_Character_Jump"
+        # ...
+
+    # particles
+    [assets.particles]
+        # P_Big_Explosion = "Particles/P_Big_Explosion"
+        # ...
+
+    # materials
+    [assets.materials]
+        # M_Red_Textured = "Materials/M_Red_Textured"
+        # ...
+
+    # blueprints
+    [assets.blueprints]
+        AUI_Properties = "Actors/AUI_Properties"
+        AdvancedUIManager = "AdvancedUIManager"
+
+    # other assets (for not yet categorized ones)
+    [assets.others]
+        # Some_Stuff = "Others/Some_Stuff"
+        # ...
