@@ -90,6 +90,16 @@ function Widget:SetText(name)
 	return self
 end
 
+function Widget:SetProgressBarColor(Color)
+    bridge:CallBlueprintEvent("SetColorPercent", self.id, tostring(Color.R), tostring(Color.G), tostring(Color.B), tostring(Color.A))
+	return self
+end
+
+function Widget:SetProgressBarValue(value)
+    bridge:CallBlueprintEvent("SetProgressBarValue", self.id, tonumber(float))
+	return self
+end
+
 function Widget:SetTab(id)
     bridge:CallBlueprintEvent("SetTab", self.id, id)
 	return self
@@ -170,6 +180,25 @@ function Button(posx, posy, sizex, sizey)
     return ins
 end
 
+function ProgressBar(posx, posy, sizex, sizey)
+    local ins = Widget.new()
+
+    local key = #ids+1
+    ids[key] = ins
+    ins.id = key
+    bridge:CallBlueprintEvent("CreateProgressBar", posx, posy, sizex, sizey, key)
+    return ins
+end
+
+function Spacer(posx, posy, sizex, sizey, spacerx, spacery)
+    local ins = Widget.new()
+
+    local key = #ids+1
+    ids[key] = ins
+    ins.id = key
+    bridge:CallBlueprintEvent("CreateSpacer", posx, posy, sizex, sizey, key, tostring(spacerx), tostring(spacery))
+    return ins
+end
 
 function Text(posx, posy, sizex, sizey, text, fontsize, justify)
     local ins = Widget.new()
@@ -284,9 +313,10 @@ function TabSwitcher(posx, posy, sizex, sizey)
     local key = #ids+1
     ids[key] = ins
     ins.id = key
-    bridge:CallBlueprintEvent("CreateTabSwitcher", posx, posy, sizex, sizey, key, isHorizontal)
+    bridge:CallBlueprintEvent("CreateTabSwitcher", posx, posy, sizex, sizey, key)
     return ins
 end
+
 
 -- HELPERS
 
@@ -358,8 +388,24 @@ function Widget:GetTranslation()
     return x,y
 end
 
+function Widget:GetProgressBarColor()
+    local value = GetValue("GetProgressColor", self.id)
+    local splitted = Split(value, "''")
+
+    local r = tonumber(splitted[1])
+    local g = tonumber(splitted[2])
+	local b = tonumber(splitted[3])
+	local a = tonumber(splitted[4])
+	
+    return Color(r,g,b,a)
+end
+
 function Widget:GetTab()
     return tonumber(GetValue("GetTab", self.id))
+end
+
+function Widget:GetProgressBarValue()
+    return tonumber(GetValue("GetProgressBarValue", self.id))
 end
 
 function Widget:GetSelectedOption()
