@@ -74,7 +74,11 @@ Widget:AddChild(widget)
 
 Widget:SetPadding(posx, posy)
 
+Widget:GetPadding() -- returns a table of numbers; [1] = x, [2] = y
+
 Widget:SetTranslation(posx, posy)
+
+Widget:GetTranslation() -- returns a table of numbers; [1] = x, [2] = y
 
 Widget:SetSize(sizex, sizey)
 
