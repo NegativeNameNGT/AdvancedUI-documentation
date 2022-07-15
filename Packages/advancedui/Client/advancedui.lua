@@ -48,6 +48,10 @@ function Widget:SetSliderValue(value)
 	return self
 end
 
+function Widget:SetCheckedState(checked)
+    bridge:CallBlueprintEvent("SetCheckedState", self.id, checked)
+	return self
+end
 
 function Widget:Subscribe(name, func)
     if not subscriptions[name] then
@@ -129,10 +133,17 @@ Events.Subscribe("AUI_Trigger", function(args)
             local val = type[3]
             if type[1] == "number" then
                 val = tonumber(val)
+			else
+			if type[1] == "boolean" then
+				if val == "true" then
+					val = true
+				else
+					val = false
+				end
             end
             new_args[k] = val
         end
-
+	end
     end
 
     TriggerElement(event, id, new_args)
@@ -344,3 +355,16 @@ end
 function Widget:GetSelectedOption()
     return GetValue("GetSelectedOption", self.id)
 end
+
+function Widget:GetCheckedState()
+	local value = GetValue("GetCheckedState", self.id)
+	local bvalue = false
+	if value == "true" then
+		bvalue = true
+	else
+		bvalue = false
+	end
+
+    return bvalue
+end
+
